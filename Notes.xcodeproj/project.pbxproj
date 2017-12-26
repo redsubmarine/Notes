@@ -77,12 +77,11 @@
 		9D099C411FF26AAB0070F921 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				9D099C421FF26AAB0070F921 /* AppDelegate.swift */,
-				9D099C441FF26AAB0070F921 /* ViewController.swift */,
-				9D099C461FF26AAB0070F921 /* Main.storyboard */,
-				9D099C491FF26AAB0070F921 /* Assets.xcassets */,
-				9D099C4B1FF26AAB0070F921 /* LaunchScreen.storyboard */,
-				9D099C4E1FF26AAB0070F921 /* Info.plist */,
+				9D099C621FF26C7E0070F921 /* Application Delegate */,
+				9D099C631FF26C990070F921 /* View Controllers */,
+				9D099C641FF26CA60070F921 /* Storyboards */,
+				9D099C661FF26CD30070F921 /* Managers */,
+				9D099C651FF26CBA0070F921 /* Supporting Files */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -94,6 +93,47 @@
 				9D099C591FF26AAB0070F921 /* Info.plist */,
 			);
 			path = NotesTests;
+			sourceTree = "<group>";
+		};
+		9D099C621FF26C7E0070F921 /* Application Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				9D099C421FF26AAB0070F921 /* AppDelegate.swift */,
+			);
+			path = "Application Delegate";
+			sourceTree = "<group>";
+		};
+		9D099C631FF26C990070F921 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9D099C441FF26AAB0070F921 /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		9D099C641FF26CA60070F921 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				9D099C461FF26AAB0070F921 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		9D099C651FF26CBA0070F921 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9D099C491FF26AAB0070F921 /* Assets.xcassets */,
+				9D099C4B1FF26AAB0070F921 /* LaunchScreen.storyboard */,
+				9D099C4E1FF26AAB0070F921 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9D099C661FF26CD30070F921 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,7 +395,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Notes/Info.plist;
+				INFOPLIST_FILE = "Notes/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.redsubmarine.Notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -370,7 +410,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Notes/Info.plist;
+				INFOPLIST_FILE = "Notes/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.redsubmarine.Notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
