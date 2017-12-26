@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -14,6 +15,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let entityDescription = NSEntityDescription.entity(forEntityName: "Note", in: coreDataManager.managedObjectContext) {
+            print(entityDescription.name ?? "No Name")
+            print(entityDescription.properties)
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
