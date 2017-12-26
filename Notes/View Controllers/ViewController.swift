@@ -24,6 +24,12 @@ class ViewController: UIViewController {
             note.setValue(Date(), forKey: "updatedAt")
             print(note)
             
+            do {
+                try coreDataManager.managedObjectContext.save()
+            } catch {
+                print("Unable to Save Managed Object Context")
+                print("\(error), \(error.localizedDescription)")
+            }
         }
     }
 
