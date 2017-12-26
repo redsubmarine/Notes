@@ -16,20 +16,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let entityDescription = NSEntityDescription.entity(forEntityName: "Note", in: coreDataManager.managedObjectContext) {
-            
-            let note = NSManagedObject(entity: entityDescription, insertInto: coreDataManager.managedObjectContext)
-            note.setValue("My First Note", forKey: "title")
-            note.setValue(Date(), forKey: "createdAt")
-            note.setValue(Date(), forKey: "updatedAt")
-            print(note)
-            
-            do {
-                try coreDataManager.managedObjectContext.save()
-            } catch {
-                print("Unable to Save Managed Object Context")
-                print("\(error), \(error.localizedDescription)")
-            }
+        let note = Note(context: coreDataManager.managedObjectContext)
+        
+        note.title = "My Second Note"
+        note.createdAt = Date()
+        note.updatedAt = Date()
+        
+        print(note)
+        
+        do {
+            try coreDataManager.managedObjectContext.save()
+        } catch {
+            print("Unable to Save Managed Object Context")
+            print("\(error), \(error.localizedDescription)")
         }
     }
 
