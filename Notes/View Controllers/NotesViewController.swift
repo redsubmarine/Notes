@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+class NotesViewController: UIViewController {
     
     private var coreDataManager = CoreDataManager(modelName: "Notes")
 
