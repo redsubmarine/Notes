@@ -13,6 +13,8 @@
 		9D099C4A1FF26AAB0070F921 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D099C491FF26AAB0070F921 /* Assets.xcassets */; };
 		9D099C4D1FF26AAB0070F921 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D099C4B1FF26AAB0070F921 /* LaunchScreen.storyboard */; };
 		9D099C581FF26AAB0070F921 /* NotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D099C571FF26AAB0070F921 /* NotesTests.swift */; };
+		9D3A38A51FF2A0C200306422 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3A38A41FF2A0C200306422 /* AddNoteViewController.swift */; };
+		9D3A38A81FF2A4C400306422 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3A38A71FF2A4C400306422 /* UIViewController.swift */; };
 		9D9738801FF2721E00C130D2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D97387F1FF2721E00C130D2 /* CoreDataManager.swift */; };
 		9D9738851FF2777A00C130D2 /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D9738821FF2761000C130D2 /* Notes.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -38,6 +40,8 @@
 		9D099C531FF26AAB0070F921 /* NotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D099C571FF26AAB0070F921 /* NotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTests.swift; sourceTree = "<group>"; };
 		9D099C591FF26AAB0070F921 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D3A38A41FF2A0C200306422 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		9D3A38A71FF2A4C400306422 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		9D97387F1FF2721E00C130D2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		9D9738831FF2761000C130D2 /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +85,7 @@
 		9D099C411FF26AAB0070F921 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				9D3A38A61FF2A4B500306422 /* Extensions */,
 				9D099C621FF26C7E0070F921 /* Application Delegate */,
 				9D099C631FF26C990070F921 /* View Controllers */,
 				9D099C641FF26CA60070F921 /* Storyboards */,
@@ -112,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				9D099C441FF26AAB0070F921 /* NotesViewController.swift */,
+				9D3A38A41FF2A0C200306422 /* AddNoteViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -140,6 +146,14 @@
 				9D97387F1FF2721E00C130D2 /* CoreDataManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		9D3A38A61FF2A4B500306422 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9D3A38A71FF2A4C400306422 /* UIViewController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9D9738811FF275FD00C130D2 /* Core Data */ = {
@@ -255,7 +269,9 @@
 			files = (
 				9D9738801FF2721E00C130D2 /* CoreDataManager.swift in Sources */,
 				9D099C451FF26AAB0070F921 /* NotesViewController.swift in Sources */,
+				9D3A38A81FF2A4C400306422 /* UIViewController.swift in Sources */,
 				9D099C431FF26AAB0070F921 /* AppDelegate.swift in Sources */,
+				9D3A38A51FF2A0C200306422 /* AddNoteViewController.swift in Sources */,
 				9D9738851FF2777A00C130D2 /* Notes.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

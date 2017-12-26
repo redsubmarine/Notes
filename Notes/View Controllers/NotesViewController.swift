@@ -9,7 +9,11 @@
 import UIKit
 import CoreData
 
-class NotesViewController: UIViewController {
+struct Segue {
+    static let addNote = "AddNote"
+}
+
+final class NotesViewController: UIViewController {
     
     private var coreDataManager = CoreDataManager(modelName: "Notes")
 
@@ -33,6 +37,18 @@ class NotesViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let identifier = segue.identifier else {
+            return
+        }
+        
+        switch identifier {
+        case Segue.addNote:
+            guard let destination = segue.destination as? AddNoteViewController else { return }
+            destination.managedObjectContext = coreDataManager.managedObjectContext
+        default:
+            break
+        }
         
     }
     
