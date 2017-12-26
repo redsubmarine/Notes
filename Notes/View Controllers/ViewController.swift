@@ -9,9 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    private var coreDataManager = CoreDataManager(modelName: "Notes")
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    
 }
