@@ -51,5 +51,29 @@ final class CoreDataManager {
     
     init(modelName: String) {
         self.modelName = modelName
+        
+        setupNotificationHandling()
+    }
+    
+    func setupNotificationHandling() {
+        let notificationCenter = NotificationCenter.default
+        
+        notificationCenter.addObserver(self, selector: #selector(saveChanges(_:)), name: .UIApplicationWillTerminate, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(saveChanges(_:)), name: .UIApplicationDidEnterBackground, object: nil)
+    }
+    
+    @objc func saveChanges(_ notification: Notification) {
+        saveChanges()
+    }
+    
+    private func saveChanges() {
+        guard managedObjectContext.hasChanges else { return }
+        
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print("Unable to Save Managed Object Context")
+            print("\(error), \(error.localizedDescription)")
+        }
     }
 }
