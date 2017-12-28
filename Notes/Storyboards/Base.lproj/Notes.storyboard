@@ -67,7 +67,7 @@
                                             <outlet property="contentsLabel" destination="5m8-Hi-ono" id="haY-Lz-QkQ"/>
                                             <outlet property="titleLabel" destination="TYB-Qn-d5h" id="Bck-l9-xNU"/>
                                             <outlet property="updatedAtLabel" destination="HZU-ih-Bv8" id="oDl-8j-eZi"/>
-                                            <segue destination="Vwn-Ln-eHB" kind="show" id="bWZ-CH-hEH"/>
+                                            <segue destination="Vwn-Ln-eHB" kind="show" identifier="Note" id="bWZ-CH-hEH"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -90,7 +90,7 @@
                     <navigationItem key="navigationItem" id="U94-jq-CH2">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="iVN-aP-09o">
                             <connections>
-                                <segue destination="3M0-NE-BqB" kind="show" id="N4p-lE-CJE"/>
+                                <segue destination="3M0-NE-BqB" kind="show" identifier="AddNote" id="N4p-lE-CJE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

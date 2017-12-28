@@ -44,6 +44,7 @@ final class NotesViewController: UIViewController {
         title = "Notes"
         
         fetchNotes()
+        setupNotificationHandling() 
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -85,11 +86,52 @@ final class NotesViewController: UIViewController {
         })
     }
     
-    func updateView() {
+    private func updateView() {
         tableView.isHidden = !hasNotes
         messageLabel.isHidden = hasNotes
     }
     
+    private func setupNotificationHandling() {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(managedObjectContextObjectsDidChange(_:)), name: NSNotification.Name.NSManagedObjectContextObjectsDidChange, object: coreDataManager.managedObjectContext)
+    }
+    
+    
+    @objc private func managedObjectContextObjectsDidChange(_ notification: Notification) {
+        var notesDidChange = false
+        guard let userInfo = notification.userInfo else {
+            return
+        }
+        if let inserts = userInfo[NSInsertedObjectsKey] as? Set<Note> {
+            for note in inserts {
+                notes?.append(note)
+                notesDidChange = true
+            }
+        }
+        
+        if let updates = userInfo[NSUpdatedObjectsKey] as? Set<Note> {
+            for _ in updates {
+                notesDidChange = true
+            }
+        }
+        
+        if let deletes = userInfo[NSDeletedObjectsKey] as? Set<Note> {
+            for note in deletes {
+                if let index = notes?.index(of: note) {
+                    notes?.remove(at: index)
+                    notesDidChange = true
+                }
+            }
+        }
+        
+        if notesDidChange {
+            notes?.sort(by: { $0.updatedAtAsDate > $1.updatedAtAsDate })
+            
+            tableView.reloadData()
+            
+            updateView()
+        }
+    }
 }
 
 extension NotesViewController: UITableViewDataSource {
