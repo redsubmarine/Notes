@@ -160,4 +160,14 @@ extension NotesViewController: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else { return }
+        
+        guard let note = notes?[indexPath.row] else {
+            fatalError("Unexpected IndexPath")
+        }
+        
+        note.managedObjectContext?.delete(note)
+    }
+    
 }
