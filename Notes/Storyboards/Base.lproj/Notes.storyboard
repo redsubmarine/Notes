@@ -67,6 +67,7 @@
                                             <outlet property="contentsLabel" destination="5m8-Hi-ono" id="haY-Lz-QkQ"/>
                                             <outlet property="titleLabel" destination="TYB-Qn-d5h" id="Bck-l9-xNU"/>
                                             <outlet property="updatedAtLabel" destination="HZU-ih-Bv8" id="oDl-8j-eZi"/>
+                                            <segue destination="Vwn-Ln-eHB" kind="show" id="bWZ-CH-hEH"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -170,6 +171,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5Y-80-sZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-270.39999999999998" y="-82.758620689655174"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="pZY-kZ-8yM">
+            <objects>
+                <viewController id="Vwn-Ln-eHB" customClass="NoteViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9nl-C8-VlI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QjQ-Yd-97O">
+                                <rect key="frame" x="15" y="74" width="345" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ygr-1G-aRY">
+                                <rect key="frame" x="15" y="114" width="345" height="128"/>
+                                <color key="backgroundColor" red="0.72603383570000002" green="0.8512273038" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="adf-QY-lp3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QjQ-Yd-97O" firstAttribute="leading" secondItem="JOV-91-kE9" secondAttribute="leading" constant="15" id="7V0-Kw-hEN"/>
+                            <constraint firstItem="ygr-1G-aRY" firstAttribute="leading" secondItem="JOV-91-kE9" secondAttribute="leading" constant="15" id="Q5L-JE-HK6"/>
+                            <constraint firstItem="ygr-1G-aRY" firstAttribute="top" secondItem="QjQ-Yd-97O" secondAttribute="bottom" constant="10" id="eIT-bT-yEa"/>
+                            <constraint firstItem="JOV-91-kE9" firstAttribute="trailing" secondItem="QjQ-Yd-97O" secondAttribute="trailing" constant="15" id="fAb-fP-e4E"/>
+                            <constraint firstItem="QjQ-Yd-97O" firstAttribute="top" secondItem="JOV-91-kE9" secondAttribute="top" constant="10" id="nAY-FG-8Qg"/>
+                            <constraint firstItem="JOV-91-kE9" firstAttribute="trailing" secondItem="ygr-1G-aRY" secondAttribute="trailing" constant="15" id="x8S-h1-a5f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JOV-91-kE9"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="kBM-la-hWx"/>
+                    <connections>
+                        <outlet property="contentsTextView" destination="ygr-1G-aRY" id="c4F-1r-WIS"/>
+                        <outlet property="titleTextField" destination="QjQ-Yd-97O" id="uDc-dO-PKt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="03U-i2-DDY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1124" y="580"/>
         </scene>
     </scenes>
 </document>

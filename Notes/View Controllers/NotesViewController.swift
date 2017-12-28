@@ -11,6 +11,7 @@ import CoreData
 
 struct Segue {
     static let addNote = "AddNote"
+    static let note = "Note"
 }
 
 final class NotesViewController: UIViewController {
@@ -55,6 +56,13 @@ final class NotesViewController: UIViewController {
         case Segue.addNote:
             guard let destination = segue.destination as? AddNoteViewController else { return }
             destination.managedObjectContext = coreDataManager.managedObjectContext
+        case Segue.note:
+            guard let destination = segue.destination as? NoteViewController else { return }
+            guard let indexPath = tableView.indexPathForSelectedRow, let note = notes?[indexPath.row] else {
+                return
+            }
+
+            destination.note = note
         default:
             break
         }
