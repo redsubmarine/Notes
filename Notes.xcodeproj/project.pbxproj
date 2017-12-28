@@ -16,6 +16,11 @@
 		9D3333511FF34D320061C123 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3333501FF34D320061C123 /* NoteTableViewCell.swift */; };
 		9D3333531FF387C00061C123 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3333521FF387C00061C123 /* Note.swift */; };
 		9D3A094C1FF4CA1F00A0684A /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3A094B1FF4CA1F00A0684A /* NoteViewController.swift */; };
+		9D3A094E1FF4E6D800A0684A /* Catetories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3A094D1FF4E6D800A0684A /* Catetories.storyboard */; };
+		9D3A09501FF4E86600A0684A /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3A094F1FF4E86600A0684A /* CategoriesViewController.swift */; };
+		9D3A09521FF4EAA100A0684A /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3A09511FF4EAA100A0684A /* CategoryTableViewCell.swift */; };
+		9D3A09541FF4EBD400A0684A /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3A09531FF4EBD400A0684A /* AddCategoryViewController.swift */; };
+		9D3A09561FF4EBDE00A0684A /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3A09551FF4EBDE00A0684A /* CategoryViewController.swift */; };
 		9D3A38A51FF2A0C200306422 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3A38A41FF2A0C200306422 /* AddNoteViewController.swift */; };
 		9D3A38A81FF2A4C400306422 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3A38A71FF2A4C400306422 /* UIViewController.swift */; };
 		9D9738801FF2721E00C130D2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D97387F1FF2721E00C130D2 /* CoreDataManager.swift */; };
@@ -46,6 +51,11 @@
 		9D3333501FF34D320061C123 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		9D3333521FF387C00061C123 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		9D3A094B1FF4CA1F00A0684A /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		9D3A094D1FF4E6D800A0684A /* Catetories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Catetories.storyboard; sourceTree = "<group>"; };
+		9D3A094F1FF4E86600A0684A /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		9D3A09511FF4EAA100A0684A /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		9D3A09531FF4EBD400A0684A /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		9D3A09551FF4EBDE00A0684A /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		9D3A38A41FF2A0C200306422 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		9D3A38A71FF2A4C400306422 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		9D97387F1FF2721E00C130D2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -126,6 +136,10 @@
 				9D3A094B1FF4CA1F00A0684A /* NoteViewController.swift */,
 				9D3333501FF34D320061C123 /* NoteTableViewCell.swift */,
 				9D3A38A41FF2A0C200306422 /* AddNoteViewController.swift */,
+				9D3A094F1FF4E86600A0684A /* CategoriesViewController.swift */,
+				9D3A09511FF4EAA100A0684A /* CategoryTableViewCell.swift */,
+				9D3A09531FF4EBD400A0684A /* AddCategoryViewController.swift */,
+				9D3A09551FF4EBDE00A0684A /* CategoryViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -134,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				9D099C461FF26AAB0070F921 /* Notes.storyboard */,
+				9D3A094D1FF4E6D800A0684A /* Catetories.storyboard */,
 				9D099C4B1FF26AAB0070F921 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -259,6 +274,7 @@
 				9D099C4D1FF26AAB0070F921 /* LaunchScreen.storyboard in Resources */,
 				9D099C4A1FF26AAB0070F921 /* Assets.xcassets in Resources */,
 				9D099C481FF26AAB0070F921 /* Notes.storyboard in Resources */,
+				9D3A094E1FF4E6D800A0684A /* Catetories.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,9 +296,13 @@
 				9D099C451FF26AAB0070F921 /* NotesViewController.swift in Sources */,
 				9D3A38A81FF2A4C400306422 /* UIViewController.swift in Sources */,
 				9D3333531FF387C00061C123 /* Note.swift in Sources */,
+				9D3A09501FF4E86600A0684A /* CategoriesViewController.swift in Sources */,
 				9D3A094C1FF4CA1F00A0684A /* NoteViewController.swift in Sources */,
+				9D3A09521FF4EAA100A0684A /* CategoryTableViewCell.swift in Sources */,
 				9D099C431FF26AAB0070F921 /* AppDelegate.swift in Sources */,
+				9D3A09541FF4EBD400A0684A /* AddCategoryViewController.swift in Sources */,
 				9D3A38A51FF2A0C200306422 /* AddNoteViewController.swift in Sources */,
+				9D3A09561FF4EBDE00A0684A /* CategoryViewController.swift in Sources */,
 				9D3333511FF34D320061C123 /* NoteTableViewCell.swift in Sources */,
 				9D9738851FF2777A00C130D2 /* Notes.xcdatamodeld in Sources */,
 			);

@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import CoreData
+
+extension Segue {
+    static let categories = "Categories"
+}
 
 final class NoteViewController: UIViewController {
-
+    
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentsTextView: UITextView!
+    @IBOutlet weak var categoryLabel: UILabel!
     
     var note: Note?
     
@@ -21,6 +27,9 @@ final class NoteViewController: UIViewController {
         title = "Edit Note"
         
         setupView()
+        
+        setupNotificationHandling()
+        updateCategoryLabel()
     }
     
     private func setupView() {
@@ -37,5 +46,44 @@ final class NoteViewController: UIViewController {
         
         note?.updatedAt = Date()
         note?.contents = contentsTextView.text
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else {
+            return
+        }
+        switch identifier {
+        case Segue.categories:
+            guard let destination = segue.destination as? CategoriesViewController else {
+                return
+            }
+            destination.note = note
+        default:
+            break
+        }
+    }
+    
+    private func setupNotificationHandling() {
+        let notificationCenter = NotificationCenter.default
+        
+        notificationCenter.addObserver(self, selector: #selector(managedObejctContextObjectsDidChange(_:)), name: .NSManagedObjectContextObjectsDidChange, object: note?.managedObjectContext)
+    }
+    
+    @objc private func managedObejctContextObjectsDidChange(_ notification: Notification) {
+        guard let userInfo = notification.userInfo else {
+            return
+        }
+        
+        guard let updates = userInfo[NSUpdatedObjectsKey] as? Set<NSManagedObject> else {
+            return
+        }
+        
+        if updates.filter({ $0 == note }).count > 0 {
+            updateCategoryLabel()
+        }
+    }
+    
+    private func updateCategoryLabel() {
+        categoryLabel.text = note?.category?.name ?? "No Category"
     }
 }

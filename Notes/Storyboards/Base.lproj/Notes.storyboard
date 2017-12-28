@@ -187,7 +187,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ygr-1G-aRY">
-                                <rect key="frame" x="15" y="114" width="345" height="128"/>
+                                <rect key="frame" x="15" y="154" width="345" height="128"/>
                                 <color key="backgroundColor" red="0.72603383570000002" green="0.8512273038" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="adf-QY-lp3"/>
@@ -195,20 +195,46 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Rf-Cd-GL0">
+                                <rect key="frame" x="15" y="112" width="52" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4y-gf-KSN">
+                                <rect key="frame" x="15" y="125" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fE6-09-CYb">
+                                <rect key="frame" x="330" y="113" width="30" height="30"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <segue destination="7dr-NT-GPd" kind="show" identifier="Categories" id="7NK-7r-sZK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="6Rf-Cd-GL0" firstAttribute="top" secondItem="QjQ-Yd-97O" secondAttribute="bottom" constant="8" id="18z-3y-sb9"/>
                             <constraint firstItem="QjQ-Yd-97O" firstAttribute="leading" secondItem="JOV-91-kE9" secondAttribute="leading" constant="15" id="7V0-Kw-hEN"/>
+                            <constraint firstItem="e4y-gf-KSN" firstAttribute="leading" secondItem="6Rf-Cd-GL0" secondAttribute="leading" id="GMU-1j-RIZ"/>
                             <constraint firstItem="ygr-1G-aRY" firstAttribute="leading" secondItem="JOV-91-kE9" secondAttribute="leading" constant="15" id="Q5L-JE-HK6"/>
-                            <constraint firstItem="ygr-1G-aRY" firstAttribute="top" secondItem="QjQ-Yd-97O" secondAttribute="bottom" constant="10" id="eIT-bT-yEa"/>
+                            <constraint firstItem="e4y-gf-KSN" firstAttribute="top" secondItem="6Rf-Cd-GL0" secondAttribute="bottom" constant="-1.5" id="Sea-Xx-Xar"/>
+                            <constraint firstItem="fE6-09-CYb" firstAttribute="top" secondItem="QjQ-Yd-97O" secondAttribute="bottom" constant="9" id="cRT-VH-8VG"/>
+                            <constraint firstItem="ygr-1G-aRY" firstAttribute="top" secondItem="QjQ-Yd-97O" secondAttribute="bottom" constant="50" id="eIT-bT-yEa"/>
                             <constraint firstItem="JOV-91-kE9" firstAttribute="trailing" secondItem="QjQ-Yd-97O" secondAttribute="trailing" constant="15" id="fAb-fP-e4E"/>
+                            <constraint firstItem="6Rf-Cd-GL0" firstAttribute="leading" secondItem="QjQ-Yd-97O" secondAttribute="leading" id="jst-c6-jJP"/>
                             <constraint firstItem="QjQ-Yd-97O" firstAttribute="top" secondItem="JOV-91-kE9" secondAttribute="top" constant="10" id="nAY-FG-8Qg"/>
+                            <constraint firstItem="fE6-09-CYb" firstAttribute="trailing" secondItem="QjQ-Yd-97O" secondAttribute="trailing" id="qcF-KI-Mpt"/>
                             <constraint firstItem="JOV-91-kE9" firstAttribute="trailing" secondItem="ygr-1G-aRY" secondAttribute="trailing" constant="15" id="x8S-h1-a5f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JOV-91-kE9"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="kBM-la-hWx"/>
                     <connections>
+                        <outlet property="categoryLabel" destination="e4y-gf-KSN" id="4zB-1o-77J"/>
                         <outlet property="contentsTextView" destination="ygr-1G-aRY" id="c4F-1r-WIS"/>
                         <outlet property="titleTextField" destination="QjQ-Yd-97O" id="uDc-dO-PKt"/>
                     </connections>
@@ -216,6 +242,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="03U-i2-DDY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1124" y="580"/>
+        </scene>
+        <!--Catetories-->
+        <scene sceneID="SVA-GP-J4b">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Catetories" id="7dr-NT-GPd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lpz-Gu-Jc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1886" y="579"/>
         </scene>
     </scenes>
 </document>
